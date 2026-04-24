@@ -138,7 +138,7 @@ export default function Task({ taskDetails }) {
         </div>
       </Dialog>
       {showEdit === true ? (
-        <div className=" fixed inset-0 z-10 w-screen overflow-y-auto bg-black/40 flex justify-center items-center">
+        <div className=" fixed inset-0 z-10 w-screen overflow-y-auto bg-black/50 flex justify-center items-center px-4">
           <div className="w-full max-w-2xl p-8 rounded-xl flex flex-col gap-8 bg-opacity-100 bg-[#171b22] shadow-md border-2 border-white/10">
             <Field>
               <Label className="text-lg/6 font-medium text-[var(--primary)]">
