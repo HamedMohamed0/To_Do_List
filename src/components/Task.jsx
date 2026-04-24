@@ -19,7 +19,7 @@ import { useSnack } from "../hooks/useSnack";
 
 export default function Task({ taskDetails }) {
   const dispatch = useDispatch();
-  const todos= useTasks();
+  const todos = useTasks();
   const { showHideSnackbar } = useSnack();
   const { id, name, description, isCompleted } = taskDetails;
   const [showEdit, setShowEdit] = useState(false);
@@ -61,7 +61,7 @@ export default function Task({ taskDetails }) {
   return (
     <>
       <div className="container mx-auto mt-10">
-        <div className="task text-white bg-white/5 rounded-xl px-12 py-4 flex justify-between items-center shadow-md border-2 border-white/10 duration-300 hover:border-[var(--primary)] hover:-translate-y-2 hover:py-6">
+        <div className="task mx-4 sm:mx-auto flex-col sm:flex-row text-center sm:text-left gap-4  text-white bg-white/5 rounded-xl px-6 sm:px-12 py-4 flex justify-between items-center shadow-md border-2 border-white/10 duration-300 hover:border-[var(--primary)] hover:-translate-y-2 hover:py-6">
           <div className="task-info">
             <h3
               className={`text-2xl font-semibold text-[var(--primary)] mb-2 ${isCompleted ? "line-through decoration-teal-400" : ""}`}
@@ -74,26 +74,24 @@ export default function Task({ taskDetails }) {
               {description}
             </p>
           </div>
-          <div className="task-actions text-2xl flex items-center gap-12">
+          <div className="task-actions text-2xl flex items-center gap-4 sm:gap-12">
             <button
               onClick={showAlert}
               className="delete border border-white/10 rounded-full p-4 transition-all duration-300 hover:bg-white/10"
             >
-              <FaTrashCan className="text-red-500" />
+              <FaTrashCan className="text-red-500 text-base sm:text-2xl" />
             </button>
             <button
               onClick={handleEdit}
               className="edit border border-white/10 rounded-full p-4 transition-all duration-300 hover:bg-white/10"
             >
-              <FaPen className="text-[var(--primary)]" />
+              <FaPen className="text-[var(--primary)] text-base sm:text-2xl" />
             </button>
             <button
-              className={`complete border border-white/10 rounded-full p-4 transition-all duration-300 hover:bg-white/10 ${isCompleted ? "bg-green-500 hover:bg-green-600" : ""}`}
+              className={`  border border-white/10 rounded-full p-4 transition-all duration-300 cursor-pointer ${isCompleted ? "bg-green-500 text-white" : "hover:bg-green-500/40"}}`}
               onClick={handleCompleted}
             >
-              <FaCheck
-                className={isCompleted ? "text-white/70" : "text-green-500"}
-              />
+              <FaCheck className="text-white/70 text-base sm:text-2xl" />
             </button>
           </div>
         </div>
